@@ -1,0 +1,25 @@
+<h2>Companies</h2>
+<div>
+    <span>Search:</span>
+    <input type="text" nz-input placeholder="Search" #filterSearch (keyup.enter)="searchFunction(filterSearch.value);" />
+</div>
+<div>
+    <table class="company-table">  
+        <thead>  
+            <tr>  
+            <th>company_name_id</th>  
+            <th>company_name</th>  
+            <th>url</th>  
+            <th>year_founded</th>  
+            </tr>  
+        </thead>  
+        <tbody>  
+            <tr *ngFor="let company of filterData">  
+                <td><a [routerLink]="['/company-detail', company.company_name_id]">{{ company.company_name_id }}</a></td>  
+                <td>{{ company.company_name }}</td>  
+                <td>{{ company.url }}</td>  
+                <td>{{ company.year_founded }}</td>  
+            </tr>  
+        </tbody>  
+    </table>
+</div>  
